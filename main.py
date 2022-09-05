@@ -47,14 +47,14 @@ async def start(client, message):
             return
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=f"""
-Hello 👋 {message.from_user.first_name}
+        caption="""
+Hello 👋
 Nice to meet you 🙌
 
 I am a powerful Telegraph Bot 🔥
 
 Hit /help to know my features 😍
-"""
+""",
         reply_markup= InlineKeyboardMarkup( [[
             InlineKeyboardButton("DEVELOPER 👨‍💻", url="https://t.me/MR_THOR_01")
             ],[
@@ -68,8 +68,8 @@ Hit /help to know my features 😍
 async def start(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=f"""
-Hello 👋 {message.from_user.first_name}
+        caption="""
+Hello 👋
 
 /start Check I am Alive
 
@@ -81,7 +81,7 @@ Send a file (image, video, sticker) under 5 MB
 I can convert that file into Telegraph link 🔥
 
 Let's Enjoy 🎉
-"""
+""",
         reply_markup= InlineKeyboardMarkup( [[
             InlineKeyboardButton("UPDATES 📢", url="https://t.me/DevilBotzz"),
             InlineKeyboardButton("SUPPORT 👥", url="https://t.me/DevilBotzzSupport")
@@ -105,7 +105,7 @@ async def start(client, message):
 ⭕ SERVER    : RAILWAY
 
 ⭕ COUNTRY   : INDIA
-"""
+""",
         reply_markup= InlineKeyboardMarkup( [[
             InlineKeyboardButton("SOURCE ❤", url="https://github.com/hkcs812/DevilTelegraphBot")
             ],[
