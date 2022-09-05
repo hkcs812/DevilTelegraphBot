@@ -140,8 +140,8 @@ async def photo_upload(bot, message):
                 InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
                 ]]
             )
-    finally:
-        os.remove(download_path)
+       finally:
+           os.remove(download_path)
 
 
 @bot.on_message(filters.video & filters.private)
@@ -171,7 +171,7 @@ async def video_upload(bot, message):
             InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
             ]]
         )
-    finally:
+   finally:
         os.remove(download_path)
 
 
