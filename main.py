@@ -10,7 +10,6 @@ bot = Client(
     api_id=Config.API_ID,
     api_hash=Config.API_HASH,
     bot_token=Config.BOT_TOKEN,
-    bot_name=Config.BOT_NAME,
     force_channel=Config.FORCE_CHANNEL
 )
 
@@ -94,7 +93,7 @@ async def start(client, message):
     await message.reply_photo(
         photo=random.choice(PICS),
         caption="""
-⭕ BOT NAME  : SPIDER MAN
+⭕ BOT NAME  : Telegraph Bot
 
 ⭕ CREATOR   : ⚡️GOD OF THUNDER⚡️
 
