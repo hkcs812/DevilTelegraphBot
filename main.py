@@ -46,7 +46,7 @@ async def start(client, message):
             )
             return
     await message.reply_photo(
-        photo=random.choice(PICS)
+        photo=random.choice(PICS),
         caption=f"""
 Hello 👋 {message.from_user.first_name}
 Nice to meet you 🙌
@@ -67,7 +67,7 @@ Hit /help to know my features 😍
 @bot.on_message(filters.command("start") & filters.private)
 async def start(client, message):
     await message.reply_photo(
-        photo=random.choice(PICS)
+        photo=random.choice(PICS),
         caption=f"""
 Hello 👋 {message.from_user.first_name}
 
@@ -92,7 +92,7 @@ Let's Enjoy 🎉
 @bot.on_message(filters.command("start") & filters.private)
 async def start(client, message):
     await message.reply_photo(
-        photo=random.choice(PICS)
+        photo=random.choice(PICS),
         caption="""
 ⭕ BOT NAME  : SPIDER MAN
 
