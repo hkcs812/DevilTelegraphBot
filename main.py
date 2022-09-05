@@ -144,7 +144,7 @@ async def photo_upload(bot, message):
 
 @bot.on_message(filters.video & filters.private)
 async def video_upload(bot, message):
-    msg = await message.reply("Your file is been uploading...", quote=True)
+    message = await message.reply("Your file is been uploading...", quote=True)
     download_path = await bot.download_media(message=message, file_name="image/jetg")
     try:
         link = upload_file(download_path)
