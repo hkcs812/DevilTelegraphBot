@@ -107,7 +107,7 @@ async def start(client, message):
 ⭕ COUNTRY   : INDIA
 """
         reply_markup= InlineKeyboardMarkup( [[
-            InlineKeyboardButton("SOURCE ❤", url="https://github.com/BRUCEBANNER00/DevilTelegraphBot")
+            InlineKeyboardButton("SOURCE ❤", url="https://github.com/hkcs812/DevilTelegraphBot")
             ],[
             InlineKeyboardButton("UPDATES 📢", url="https://t.me/DevilBotzz"),
             InlineKeyboardButton("SUPPORT 👥", url="https://t.me/DevilBotzzSupport")
