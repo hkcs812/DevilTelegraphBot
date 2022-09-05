@@ -157,7 +157,7 @@ async def sticker_upload(bot, message):
     try:
         link = upload_file(download_path)
         generated_link = "https://telegra.ph" + "".join(link)
-            reply_markup= InlineKeyboardMarkup( [[
+        reply_markup= InlineKeyboardMarkup( [[
             InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
             ],[
             InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
