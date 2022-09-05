@@ -2,6 +2,7 @@ import os
 import random
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import UserNotParticipant
 from telegraph import upload_file
 from config import Config
 
@@ -26,6 +27,8 @@ PICS = [
  "https://telegra.ph/file/edb27ed98b9c9275db431.jpg",
 ]
 
+force_channel = "DevilBotzz"
+
 
 @bot.on_message(filters.command("start") & filters.private)
 async def start(client, message):
@@ -39,7 +42,7 @@ async def start(client, message):
             await message.reply_text(
                 text="𝙔𝙊𝙐 𝙃𝘼𝙑𝙀 𝙏𝙊 𝙎𝙐𝘽𝙎𝘾𝙍𝙄𝘽𝙀 𝙈𝙔 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 𝙏𝙊 𝙐𝙎𝙀 𝙏𝙃𝙄𝙎 𝘽𝙊𝙏 😁",
                 reply_markup=InlineKeyboardMarkup( [[
-                 InlineKeyboardButton("⚡️𝙐𝙋𝘿𝘼𝙏𝙀 𝘾𝙃𝘼𝙉𝙉𝙀𝙇⚡️", url=f"t.me/{Config.FORCE_CHANNEL}")
+                 InlineKeyboardButton("⚡️𝙐𝙋𝘿𝘼𝙏𝙀 𝘾𝙃𝘼𝙉𝙉𝙀𝙇⚡️", url=f"t.me/{force_channel}")
                  ]]
                  )
             )
