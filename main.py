@@ -128,6 +128,8 @@ async def photo_upload(bot, message):
             InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
             ]]
         )
+    finally:
+        os.remove(download_path)
 
 
 @bot.on_message(filters.animation & filters.private)
@@ -144,62 +146,8 @@ async def animation_upload(bot, message):
             InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
             ]]
         )
-
-
-##UPLOAD ANIMATIONS TO THE TELEGRAPH IN GROUPS
-
-@bot.on_message(filters.group & filters.animation)
-async def animation_upload_groups(bot, message):
-    msg = await message.reply("Your file is been uploading...", quote=True)
-    download_path = await bot.download_media(message=message, file_name="gif/jetg")
-    try:
-        link = upload_file(download_path)
-        generated_link = "https://telegra.ph" + "".join(link)
-        reply_markup= InlineKeyboardMarkup( [[
-            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
-            ],[
-            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
-            ]]
-        )
-
-
-## UPLOAD PHOTOS TO TELEGRAPH IN GROUPS
-
-@bot.on_message(filters.group & filters.photo)
-async def photo_upload_groups(bot, message):
-    msg = await message.reply("Your file is been uploading...", quote=True)
-    download_path = await bot.download_media(message=message, file_name="gif/jetg")
-    try:
-        link = upload_file(download_path)
-        generated_link = "https://telegra.ph" + "".join(link)
-        f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
-            reply_markup= InlineKeyboardMarkup( [[
-            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
-            ],[
-            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
-            ]]
-        )
-
-
-## VIDEO UPLOAD TO THE TELEGRAPH IN GROUPS
-
-@bot.on_message(filters.group & filters.video)
-async def video_upload_group(bot, message):
-    msg = await message.reply("Your file is been uploading...", quote=True)
-    download_path = await bot.download_media(message=message, file_name="gif/jetg")
-    try:
-        link = upload_file(download_path)
-        generated_link = "https://telegra.ph" + "".join(link)
-        f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
-            reply_markup= InlineKeyboardMarkup( [[
-            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
-            ],[
-            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
-            ]]
-        )
-
-
-## STICKER UPLOAD
+    finally:
+        os.remove(download_path)
 
 
 @bot.on_message(filters.sticker)
@@ -215,23 +163,8 @@ async def sticker_upload(bot, message):
             InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
             ]]
         )
-
-
-## UPLOAD STICKERS TO TELEGRAPH IN GROUPS
-
-@bot.on_message(filters.group & filters.sticker)
-async def sticker_upload_group(bot, message):
-    msg = await message.reply("Your file is been uploading...", quote=True)
-    download_path = await bot.download_media(message=message, file_name="gif/jetg")
-    try:
-        link = upload_file(download_path)
-        generated_link = "https://telegra.ph" + "".join(link)
-            reply_markup= InlineKeyboardMarkup( [[
-            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
-            ],[
-            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
-            ]]
-        )
+    finally:
+        os.remove(download_path)
 
 
 print("I AM ALIVE 🔥")
