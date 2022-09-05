@@ -77,7 +77,7 @@ Hello 👋
 
 /about About Me
 
-Send a file (image, video, sticker) under 5 MB
+Send a image under 5 MB size
 I can convert that file into Telegraph link 🔥
 
 Let's Enjoy 🎉
@@ -130,8 +130,7 @@ async def photo_upload(bot, message):
         )
     except:
         await msg.edit_text(
-            "File must be less than 5mb, please try another file or <a href=https://t.me/sanilaassistant_bot>LEARN THIS BOT FIRST!</a>",
-            disable_web_page_preview=True, reply_markup=ERROR_BUTTON)
+            "File must be less than 5mb, please try another file or <a href=https://t.me/sanilaassistant_bot>LEARN THIS BOT FIRST!</a>"
     else:
         t = await msg.edit_text(generated_link, disable_web_page_preview=True)
         await t.edit_text(
@@ -140,37 +139,6 @@ async def photo_upload(bot, message):
                 InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
                 ]]
             )
-
-
-@bot.on_message(filters.video & filters.private)
-async def video_upload(bot, message):
-    message = await message.reply("Your file is been uploading...", quote=True)
-    download_path = await bot.download_media(message=message, file_name="image/jetg")
-    try:
-        link = upload_file(download_path)
-        generated_Link = "https://telegra.ph" + "".join(link)
-        reply_markup= InlineKeyboardMarkup( [[
-            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
-            ],[
-            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
-            ]]
-        )
-    except:
-        await msg.edit_text(
-            "File must be less than 5mb, please try another file or <a href=https://t.me/sanilaassistant_bot>LEARN THIS BOT FIRST!</a>",
-            disable_web_page_preview=True, reply_markup=ERROR_BUTTON)
-    else:
-        t = await msg.edit_text(generated_Link, disable_web_page_preview=True)
-        await t.edit_text(
-            f"Link - `{generated_Link} `\n\n<a href=https://t.me/DevilBotzzSupport>Feel free to leave a feedback</a>",
-            reply_markup= InlineKeyboardMarkup( [[
-            InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
-            ],[
-            InlineKeyboardButton("Web Preview 🔷", url=generated_Link)
-            ]]
-        )
-   finally:
-        os.remove(download_path)
 
 
 @bot.on_message(filters.animation & filters.private)
