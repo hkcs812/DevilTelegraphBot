@@ -140,7 +140,7 @@ async def photo_upload(bot, message):
                 InlineKeyboardButton("Report Bugs ⚠", url="https://t.me/DevilBotzzSupport")
                 ]]
             )
-       finally:
+       finally:,
            os.remove(download_path)
 
 
