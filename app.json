@@ -1,0 +1,50 @@
+{
+  "name": "DevilTelegraphBot",
+  "description":"You can use this bot for get telegraph links.",
+  "repository": "https://github.com/BRUCEBANNER00/DevilTelegraphBot",
+  "logo": "https://telegra.ph/file/3cd69915641c4c095b40d.jpg",
+  "keywords": [
+    "telegraph bot",
+    "images",
+    "videos",
+    "animation",
+    "uploader",
+    "pyrogram bot"
+  ],
+      "env": {
+        "API_ID": {
+            "description": "Get from my.telegram.org/apps",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Get from my.telegram.org/apps",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "Get from Telegram's @BotFather",
+            "required": true
+        },
+        "BOT_NAME": {
+            "description": "Bot's username from @BotFather",
+            "required": true
+        },
+        "FORCE_CHANNEL": {
+            "description": "Your Telegram channel's ID",
+            "required": false
+        },
+        "PICS": {
+            "description": "Add some Telegraph links of pictures",
+            "required": false
+    },
+    "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
